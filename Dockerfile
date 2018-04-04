@@ -25,5 +25,5 @@ RUN cat /ca.crt >> /etc/ssl/certs/ca-certificates.crt
 ADD entrypoint.sh /entrypoint.sh
 
 WORKDIR /root
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD [""]
