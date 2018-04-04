@@ -22,7 +22,8 @@ RUN apk add --update ca-certificates \
  
 ADD ca.crt /ca.crt
 RUN cat /ca.crt >> /etc/ssl/certs/ca-certificates.crt 
+ADD entrypoint.sh /entrypoint.sh
 
 WORKDIR /root
-ENTRYPOINT ["kubectl"]
-CMD ["help"]
+ENTRYPOINT ["entrypoint.sh"]
+CMD [""]
