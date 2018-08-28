@@ -11,8 +11,11 @@ RUN apk add --no-cache tar bash procps \
  && rm /var/cache/apk/*
  
 ADD ca.crt /ca.crt
-RUN cat /ca.crt >> /etc/ssl/certs/ca-certificates.crt 
+RUN cat /ca.crt >> /etc/ssl/certs/ca-certificates.crt
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 WORKDIR /root
-ENTRYPOINT ["kubectl"]
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["help"]
