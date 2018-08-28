@@ -18,4 +18,4 @@ RUN chmod +x /entrypoint.sh
 
 WORKDIR /root
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["help"]
+CMD ["kubectl"]
